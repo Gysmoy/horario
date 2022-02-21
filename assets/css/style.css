@@ -83,6 +83,15 @@ main {
     box-shadow: 0 0 5px rgb(200, 200, 200);
     font-weight: bold;
 }
+#footer .mark {
+    position: absolute;
+    top: -10px;
+    font-size: smaller;
+    padding: 2px 4px;
+    background-color: #7a83ea;
+    color: #fff;
+    border-radius: 10px;
+}
 #footer .logo {
     position: absolute;
     top: 50%;
