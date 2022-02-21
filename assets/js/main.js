@@ -55,15 +55,17 @@ setInterval(function () {
       }
       if (__now - __start >= 0) {
         var percent = ((__now - __start) * 100) / (__end - __start);
+        var mark_width = ($('#footer .mark').width() + 8) / 2;
         $('#footer .mark').text(`${percent.toFixed(2)}%`)
-          .css('left', `calc(${percent}% - 25px)`);
+          .css('left', `calc(${percent}% - ${mark_width}px)`);
         $("#footer .link").css(
           "background",
           `linear-gradient(90deg, #fff 0%, #7a83ea33 ${percent}%, #fff ${percent}%)`
         );
       } else {
+        var mark_width = ($('#footer .mark').width() + 8) / 2;
         $('#footer .mark').text('0.00%')
-          .css('left', `calc(0% - 25px)`);
+          .css('left', `calc(0% - ${mark_width}px)`);
         $("#footer .link").css("background", "#fff");
       }
 
