@@ -62,11 +62,13 @@ setInterval(function () {
           "background",
           `linear-gradient(90deg, #fff 0%, #7a83ea33 ${percent}%, #fff ${percent}%)`
         );
+        $('title').text(`(${percent.toFixed(2)}%) ${now.course}`);
       } else {
         var mark_width = ($('#footer .mark').width() + 8) / 2;
         $('#footer .mark').text('0.00%')
           .css('left', `calc(0% - ${mark_width}px)`);
         $("#footer .link").css("background", "#fff");
+        $('title').text(`Horario`);
       }
 
       $("#body.false").hide();
