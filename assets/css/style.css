@@ -116,3 +116,41 @@ main {
     transform: translateY(-50%);
     width: 25px;
 }
+#schedule-table {
+    padding: 20px;
+    background-color: aliceblue;
+    background-color: transparent;
+    box-shadow: none;
+}
+#schedule-table > div {
+    position: relative;
+    margin: 5px 0;
+}
+#schedule-table > div > span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    background-color: #fff;
+    border: 2px solid #fff;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 0 5px #000;
+}
+#schedule-table > div > div {
+    padding: 10px;
+    margin-left: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000;
+    border: 2px solid #fff;
+}
+#schedule-table > div > div > div {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+#schedule-table > div > div > div:last-child {
+    margin: 0;
+}
