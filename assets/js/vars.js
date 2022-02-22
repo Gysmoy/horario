@@ -39,6 +39,13 @@ var horario = {
     ],
     "day2": [
         {
+            "start": "08:00",
+            "end": "13:00",
+            "course": "KARLOS SEGUROS",
+            "instructor": "FREDDY BENDEZÚ",
+            "link": "https://wa.me/?text=Buenos días ingeniero, buenos días a todos: https://meet.google.com/bxt-oavn-uxi",
+        },
+        {
             "start": "13:30",
             "end": "15:00",
             "course": courses.FPR,
@@ -54,6 +61,13 @@ var horario = {
         }
     ],
     "day3": [
+        {
+            "start": "08:00",
+            "end": "13:00",
+            "course": "KARLOS SEGUROS",
+            "instructor": "FREDDY BENDEZÚ",
+            "link": "https://wa.me/?text=Buenos días ingeniero, buenos días a todos: https://meet.google.com/bxt-oavn-uxi",
+        },
         {
             "start": "13:30",
             "end": "15:00",
@@ -71,6 +85,13 @@ var horario = {
     ],
     "day4": [
         {
+            "start": "08:00",
+            "end": "13:00",
+            "course": "KARLOS SEGUROS",
+            "instructor": "FREDDY BENDEZÚ",
+            "link": "https://wa.me/?text=Buenos días ingeniero, buenos días a todos: https://meet.google.com/bxt-oavn-uxi",
+        },
+        {
             "start": "13:30",
             "end": "15:00",
             "course": courses.SYP,
@@ -80,15 +101,6 @@ var horario = {
         {
             "start": "15:15",
             "end": "16:45",
-            "course": courses.SYP,
-            "instructor": instructors.VDJC,
-            "link": links.SYP
-        }
-    ],
-    "day0": [
-        {
-            "start": "22:20",
-            "end": "22:22",
             "course": courses.SYP,
             "instructor": instructors.VDJC,
             "link": links.SYP
