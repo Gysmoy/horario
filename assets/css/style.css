@@ -131,8 +131,10 @@ main {
     top: 50%;
     transform: translateY(-50%);
     padding: 5px 10px;
-    background-color: #fff;
+    background-color: transparent;
+    color: #fff;
     border: 2px solid #fff;
+    text-shadow: 0 0 5px #000;
     font-weight: bold;
     border-radius: 50px;
     box-shadow: 0 0 5px #000;

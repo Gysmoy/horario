@@ -53,6 +53,9 @@ setInterval(function () {
       if (__now - __start == 0) {
         window.open(now.link, "_alt");
       }
+      $('.day').css({
+        'border-color': '#fff'
+      });
       if (__now - __start >= 0) {
         var percent = ((__now - __start) * 100) / (__end - __start);
         var mark_width = ($('#footer .mark').width() + 8) / 2;
@@ -63,6 +66,9 @@ setInterval(function () {
           `linear-gradient(90deg, #fff 0%, #7a83ea33 ${percent}%, #fff ${percent}%)`
         );
         $('title').text(`(${percent.toFixed(2)}%) ${now.course}`);
+        $(`.${day}`).css({
+          'border-color': '#4285f4'
+        })
       } else {
         var mark_width = ($('#footer .mark').width() + 8) / 2;
         $('#footer .mark').text('0.00%')

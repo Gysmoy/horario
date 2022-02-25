@@ -8,14 +8,14 @@ $(document).on("click", "#schedule", function () {
       var template = '';
       template += `
         <div>
-          <span>
+          <span class="day span day${i}">
               ${days[i]}
           </span>
-          <div>
+          <div class="day day${i}">
       `;
       day.forEach(d => {
         template += `
-          <div>${d.course}</div>
+          <div class="day day${i}">${d.course}</div>
         `;
       });
       template += `    
@@ -26,10 +26,10 @@ $(document).on("click", "#schedule", function () {
     } else {
       modal.append(`
         <div>
-          <span>
+          <span class="day span day${i}">
               ${days[i]}
           </span>
-          <div>- No hay clases en este día -</div>
+          <div class="day day${i}">- No hay clases en este día -</div>
         </div>
       `);
     }

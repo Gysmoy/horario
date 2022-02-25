@@ -118,5 +118,14 @@ var horario = {
             "instructor": instructors.VDJC,
             "link": links.SYP
         }
+    ],
+    "day5": [
+        {
+            "start": "08:00",
+            "end": "13:00",
+            "course": courses.SIE,
+            "instructor": instructors.FB,
+            "link": links.SIE
+        }
     ]
 };
