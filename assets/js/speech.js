@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     vocesDisponibles = speechSynthesis.getVoices();
-    console.log({ vocesDisponibles })
+    //console.log({ vocesDisponibles })
+    console.log('Las notificaciones por voz ha sido activada');
     posibleIndice = vocesDisponibles.findIndex(voz => IDIOMAS_PREFERIDOS.includes(voz.lang));
     if (posibleIndice === -1) posibleIndice = 0;
     vocesDisponibles.forEach((voz, indice) => {
