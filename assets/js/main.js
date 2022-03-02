@@ -1,5 +1,22 @@
 moment.locale("es");
 setInterval(function () {
+
+  // INICIO: Verificación del estado de internet
+  if (web_status != window.navigator.onLine) {
+    web_status = window.navigator.onLine;
+    if (web_status) {
+      $('#status').removeClass('offline').addClass('online');
+      $('#icon').attr('href', 'assets/img/online.png');
+      $('#mensaje').val('Se ha reestablecido la conexión a internet');
+    } else {
+      $('#status').removeClass('online').addClass('offline');
+      $('#icon').attr('href', 'assets/img/offline.png');
+      $('#mensaje').val('Se ha perdido la conexión a internet');
+    }
+    $('#btnEscuchar').click()
+  }
+  // FIN: Verificación del estado de internet
+
   var date = new Date();
   var day = `day${date.getDay()}`;
   $("#header").html(`
@@ -56,6 +73,19 @@ setInterval(function () {
       $('.day').css({
         'border-color': '#fff'
       });
+      if (__end - __now == 300) {
+        $('#mensaje').val(`Tu clase de ${now.course} termina en cinco minutos`);
+        $('#btnEscuchar').click()
+      } else if (__end - __now == 0) {
+        $('#mensaje').val(`Tu clase de ${now.course} ha terminado`);
+        $('#btnEscuchar').click()
+      } else if (__start - __now == 300) {
+        $('#mensaje').val(`Tu clase de ${now.course} empieza en cinco minutos`);
+        $('#btnEscuchar').click()
+      } else if (__start - __now == 0) {
+        $('#mensaje').val(`Tu clase de ${now.course} ha empezado`);
+        $('#btnEscuchar').click()
+      }
       if (__now - __start >= 0) {
         var percent = ((__now - __start) * 100) / (__end - __start);
         var mark_width = ($('#footer .mark').width() + 8) / 2;

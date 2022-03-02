@@ -1,3 +1,4 @@
+var web_status = true;
 var days = {
     '0': 'D',
     '1': 'L',
