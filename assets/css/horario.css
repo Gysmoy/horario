@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+table thead th{
+    border: solid 6px rgb(255, 255, 255);
+    background-color: rgb(55, 67, 95);
+    color: #fff;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+table tbody tr td{
+    text-align: center;
+    background-color: rgb(67, 73, 95);
+    color: white;
+    border: solid 4px white;
+    padding: 4px;
+}

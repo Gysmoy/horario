@@ -1,0 +1,30 @@
+{
+    "status": 200,
+    "message": "message",
+    "data": {
+        "lunes": [
+            {
+                "time": "10:00",
+                "word": "description",
+                "color":"#fff"
+            },
+            {
+                "time": "10:30",
+                "word": "description",
+                "color":"#fff"
+            }
+        ],
+        "martes": [
+            {
+                "time": "10:00",
+                "word": "description",
+                "color":"#fff"
+            },
+            {
+                "time": "10:30",
+                "word": "description",
+                "color":"#fff"
+            }
+        ]
+    }
+}
