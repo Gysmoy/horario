@@ -7,7 +7,7 @@ $(document).on("click", "#schedule", function () {
     if (day) {
       var template = '';
       template += `
-        <div>
+        <div style="display: none">
           <span class="day span day${i}">
               ${days[i]}
           </span>

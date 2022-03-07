@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>horario</title>
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Courier New", Courier, monospace;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: aliceblue;
+        }
+
+        main {
+            margin: auto;
+            margin-top: 20px;
+            max-width: 540px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgb(200, 200, 200);
+            border-radius: 5px;
+            padding: 15px;
+        }
+
+        #controls {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #controls button,
+        #controls select,
+        #day {
+            position: relative;
+            text-align: center;
+            display: block;
+            font-size: x-large;
+            padding: 5px 15px;
+            margin: 5px;
+            border-radius: 50px;
+            border: 1px solid #fff;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgb(200, 200, 200);
+            cursor: pointer;
+            font-weight: bolder;
+            user-select: none;
+        }
+
+        #schedule-container {
+            margin-top: 15px;
+        }
+
+        #schedule-container table {
+            border-collapse: separate;
+            border-spacing: 5px;
+        }
+
+        #schedule-container td {
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #fff;
+            box-shadow: 0 0 5px rgb(200, 200, 200);
+            padding: 4px 8px;
+            border-radius: 5px;
+            vertical-align: middle;
+        }
+        #schedule-container tr.none td:last-child {
+            color: rgb(200, 200, 200);
+        }
+        #days {
+            position: absolute;
+            width: max-content;
+            /* INICIO RESPONSIVE */
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* FIN RESPONSIVE */
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            border-radius: 50px;
+            box-shadow: 0 0 5px rgb(200, 200, 200);
+            padding: 5px ;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="controls">
+            <button class="fa fa-angle-left"></button>
+            <span id="day">L
+                <div id="days" style="display: none;">
+                    <button>D</button>
+                    <button>L</button>
+                    <button>M</button>
+                    <button>X</button>
+                    <button>J</button>
+                    <button>V</button>
+                    <button>S</button>
+                </div>
+            </span>
+            <button class="fa fa-angle-right"></button>
+        </div>
+        <div id="schedule-container">
+            <table id="1">
+                <thead>
+                    <tr>
+                        <td colspan="3">LUNES</td>
+                    </tr>
+                    <tr>
+                        <td>INI</td>
+                        <td>FIN</td>
+                        <td>CURSO</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="none">
+                        <td>00:00</td>
+                        <td>08:00</td>
+                        <td>- No tienes clases en estos momentos -</td>
+                    </tr>
+                    <tr>
+                        <td>08:00</td>
+                        <td>13:00</td>
+                        <td>SOFTWARE INTEGRATION EIRL</td>
+                    </tr>
+                    <tr class="none">
+                        <td>13:00</td>
+                        <td>13:30</td>
+                        <td>- No tienes clases en estos momentos -</td>
+                    </tr>
+                    <tr>
+                        <td>13:30</td>
+                        <td>15:45</td>
+                        <td>FORMACIÓN PRÁCTICA REMOTA</td>
+                    </tr>
+                    <tr class="none">
+                        <td>15:45</td>
+                        <td>00:00</td>
+                        <td>- No tienes clases en el resto del día -</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="assets/js/fontawesome.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $(document).on('click', '#day', function () {
+            $('#days').toggle(125);
+        })
+    </script>
+</body>
+
+</html>
