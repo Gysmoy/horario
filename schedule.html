@@ -20,6 +20,7 @@
         }
 
         main {
+            position: relative;
             margin: auto;
             margin-top: 20px;
             max-width: 540px;
@@ -55,10 +56,11 @@
         }
 
         #schedule-container {
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         #schedule-container table {
+            display: none;
             border-collapse: separate;
             border-spacing: 5px;
         }
@@ -72,9 +74,17 @@
             border-radius: 5px;
             vertical-align: middle;
         }
+        #schedule-container thead td {
+            font-weight: bolder;
+            background-color: #4285f4;
+            border: 1px solid #4285f4;
+            color: #fff;
+        }
+
         #schedule-container tr.none td:last-child {
             color: rgb(200, 200, 200);
         }
+
         #days {
             position: absolute;
             width: max-content;
@@ -83,14 +93,15 @@
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
+            z-index: 2;
             /* FIN RESPONSIVE */
-            top: 50px;
+            top: 70px;
             left: 50%;
             transform: translateX(-50%);
             background-color: #fff;
             border-radius: 50px;
             box-shadow: 0 0 5px rgb(200, 200, 200);
-            padding: 5px ;
+            padding: 5px;
         }
     </style>
 </head>
@@ -98,22 +109,62 @@
 <body>
     <main>
         <div id="controls">
-            <button class="fa fa-angle-left"></button>
-            <span id="day">L
+            <button id="prev" class="fa fa-angle-left"></button>
+            <span>
+                <button data-value="1" id="day">L</button>
                 <div id="days" style="display: none;">
-                    <button>D</button>
-                    <button>L</button>
-                    <button>M</button>
-                    <button>X</button>
-                    <button>J</button>
-                    <button>V</button>
-                    <button>S</button>
+                    <button data-value="0">D</button>
+                    <button data-value="1">L</button>
+                    <button data-value="2">M</button>
+                    <button data-value="3">X</button>
+                    <button data-value="4">J</button>
+                    <button data-value="5">V</button>
+                    <button data-value="6">S</button>
                 </div>
             </span>
-            <button class="fa fa-angle-right"></button>
+            <button id="next" class="fa fa-angle-right"></button>
         </div>
         <div id="schedule-container">
-            <table id="1">
+            <table id="0" width="100%">
+                <thead>
+                    <tr>
+                        <td colspan="3">DOMINGO</td>
+                    </tr>
+                    <tr>
+                        <td>INI</td>
+                        <td>FIN</td>
+                        <td>CURSO</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="none">
+                        <td>00:00</td>
+                        <td>08:00</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                    <tr>
+                        <td>08:00</td>
+                        <td>13:00</td>
+                        <td>SOFTWARE INTEGRATION EIRL</td>
+                    </tr>
+                    <tr class="none">
+                        <td>13:00</td>
+                        <td>13:30</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                    <tr>
+                        <td>13:30</td>
+                        <td>15:45</td>
+                        <td>FORMACIÓN PRÁCTICA REMOTA</td>
+                    </tr>
+                    <tr class="none">
+                        <td>15:45</td>
+                        <td>00:00</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="1" width="100%">
                 <thead>
                     <tr>
                         <td colspan="3">LUNES</td>
@@ -128,7 +179,7 @@
                     <tr class="none">
                         <td>00:00</td>
                         <td>08:00</td>
-                        <td>- No tienes clases en estos momentos -</td>
+                        <td>- No hay eventos registrados -</td>
                     </tr>
                     <tr>
                         <td>08:00</td>
@@ -138,7 +189,7 @@
                     <tr class="none">
                         <td>13:00</td>
                         <td>13:30</td>
-                        <td>- No tienes clases en estos momentos -</td>
+                        <td>- No hay eventos registrados -</td>
                     </tr>
                     <tr>
                         <td>13:30</td>
@@ -148,7 +199,202 @@
                     <tr class="none">
                         <td>15:45</td>
                         <td>00:00</td>
-                        <td>- No tienes clases en el resto del día -</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="2" width="100%">
+                <thead>
+                    <tr>
+                        <td colspan="3">MARTES</td>
+                    </tr>
+                    <tr>
+                        <td>INI</td>
+                        <td>FIN</td>
+                        <td>CURSO</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="none">
+                        <td>00:00</td>
+                        <td>08:00</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                    <tr>
+                        <td>08:00</td>
+                        <td>13:00</td>
+                        <td>SOFTWARE INTEGRATION EIRL</td>
+                    </tr>
+                    <tr class="none">
+                        <td>13:00</td>
+                        <td>13:30</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                    <tr>
+                        <td>13:30</td>
+                        <td>15:45</td>
+                        <td>FORMACIÓN PRÁCTICA REMOTA</td>
+                    </tr>
+                    <tr class="none">
+                        <td>15:45</td>
+                        <td>00:00</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="3" width="100%">
+                <thead>
+                    <tr>
+                        <td colspan="3">MIERCOLES</td>
+                    </tr>
+                    <tr>
+                        <td>INI</td>
+                        <td>FIN</td>
+                        <td>CURSO</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="none">
+                        <td>00:00</td>
+                        <td>08:00</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                    <tr>
+                        <td>08:00</td>
+                        <td>13:00</td>
+                        <td>SOFTWARE INTEGRATION EIRL</td>
+                    </tr>
+                    <tr class="none">
+                        <td>13:00</td>
+                        <td>13:30</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                    <tr>
+                        <td>13:30</td>
+                        <td>15:45</td>
+                        <td>FORMACIÓN PRÁCTICA REMOTA</td>
+                    </tr>
+                    <tr class="none">
+                        <td>15:45</td>
+                        <td>00:00</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="4" width="100%">
+                <thead>
+                    <tr>
+                        <td colspan="3">JUEVES</td>
+                    </tr>
+                    <tr>
+                        <td>INI</td>
+                        <td>FIN</td>
+                        <td>CURSO</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="none">
+                        <td>00:00</td>
+                        <td>08:00</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                    <tr>
+                        <td>08:00</td>
+                        <td>13:00</td>
+                        <td>SOFTWARE INTEGRATION EIRL</td>
+                    </tr>
+                    <tr class="none">
+                        <td>13:00</td>
+                        <td>13:30</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                    <tr>
+                        <td>13:30</td>
+                        <td>15:45</td>
+                        <td>FORMACIÓN PRÁCTICA REMOTA</td>
+                    </tr>
+                    <tr class="none">
+                        <td>15:45</td>
+                        <td>00:00</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="5" width="100%">
+                <thead>
+                    <tr>
+                        <td colspan="3">VIERNES</td>
+                    </tr>
+                    <tr>
+                        <td>INI</td>
+                        <td>FIN</td>
+                        <td>CURSO</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="none">
+                        <td>00:00</td>
+                        <td>08:00</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                    <tr>
+                        <td>08:00</td>
+                        <td>13:00</td>
+                        <td>SOFTWARE INTEGRATION EIRL</td>
+                    </tr>
+                    <tr class="none">
+                        <td>13:00</td>
+                        <td>13:30</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                    <tr>
+                        <td>13:30</td>
+                        <td>15:45</td>
+                        <td>FORMACIÓN PRÁCTICA REMOTA</td>
+                    </tr>
+                    <tr class="none">
+                        <td>15:45</td>
+                        <td>00:00</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="6" width="100%">
+                <thead>
+                    <tr>
+                        <td colspan="3">SABADO</td>
+                    </tr>
+                    <tr>
+                        <td>INI</td>
+                        <td>FIN</td>
+                        <td>CURSO</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="none">
+                        <td>00:00</td>
+                        <td>08:00</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                    <tr>
+                        <td>08:00</td>
+                        <td>13:00</td>
+                        <td>SOFTWARE INTEGRATION EIRL</td>
+                    </tr>
+                    <tr class="none">
+                        <td>13:00</td>
+                        <td>13:30</td>
+                        <td>- No hay eventos registrados -</td>
+                    </tr>
+                    <tr>
+                        <td>13:30</td>
+                        <td>15:45</td>
+                        <td>FORMACIÓN PRÁCTICA REMOTA</td>
+                    </tr>
+                    <tr class="none">
+                        <td>15:45</td>
+                        <td>00:00</td>
+                        <td>- No hay eventos registrados -</td>
                     </tr>
                 </tbody>
             </table>
@@ -157,8 +403,47 @@
     <script src="assets/js/fontawesome.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script>
+        $(document).ready(function () {
+            var date = new Date();
+            var day = date.getDay()
+            $('#days button')[day].click();
+        })
+        const days = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
         $(document).on('click', '#day', function () {
             $('#days').toggle(125);
+        })
+        function showDay(id) {
+            $('#schedule-container table').each(function () {
+                if ($(this).attr('id') == id) {
+                    $(this).fadeIn(250);
+                } else {
+                    $(this).hide();
+                }
+            })
+        }
+        $(document).on('click', '#days button', function () {
+            var value = $(this).attr('data-value');
+            var label = $(this).text();
+            $('#days').hide(125);
+            $('#day').attr('data-value', value).text(label);
+            showDay(value);
+        })
+        $(document).on('click', '#prev', function () {
+            var value = $('#day').attr('data-value');
+            var day = parseInt(value) - 1;
+            day = (day < 0) ? 6 : day;
+            $('#day').attr('data-value', day).text(days[day]);
+            showDay(day);
+        })
+        $(document).on('click', '#next', function () {
+            var value = $('#day').attr('data-value');
+            var day = parseInt(value) + 1;
+            day = (day > 6) ? 0 : day;
+            $('#day').attr('data-value', day).text(days[day]);
+            showDay(day);
+        })
+        $(document).on('change', '#day', function () {
+            console.log('cambió algo')
         })
     </script>
 </body>

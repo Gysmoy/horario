@@ -1,0 +1,36 @@
+{
+    "status": 200,
+    "message": "Operación correcta",
+    "data": [
+        {
+            "id": "0001",
+            "_subject": "0001",
+            "subject": {
+                "id": "0001",
+                "name": "Formación Práctica remote"
+            },
+            "_attendant": "0001",
+            "attendant": {
+                "id": "0001",
+                "name": "Carlos Gamboa"
+            },
+            "time": {
+                "start": "00:00",
+                "end": "00:00"
+            },
+            "voice": {
+                "beforeStart": {
+                    "seconds": 300,
+                    "voice": "Tu clase de {subject} empieza en {time}"
+                },
+                "start": "Tu clase con {attendant} de {subject} ha empezado",
+                "beforeEnd": {
+                    "seconds": 300,
+                    "voice": "Tu clase de {subject} termina en {time}"
+                },
+                "end": "Tu clase de {subject} ha terminado"
+            },
+            "day": 1
+        }
+    ]
+}
