@@ -53,7 +53,7 @@
         #menu-container {
             position: absolute;
             z-index: 3;
-            padding: 20px;
+            padding: 15px;
             top: 0;
             left: 0;
             right: 0;
@@ -62,10 +62,19 @@
             background-color: rgba(255, 255, 255, .25);
             backdrop-filter: blur(10px);
         }
+        #menu-container > div {
+            position: absolute;
+            height: max-content;
+            width: max-content;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
         #menu-container button {
             display: block;
-            margin: 20px auto;
             font-size: medium;
+            width: 100%;
+            margin: 5px auto;
             font-weight: bolder;
             padding: 5px 10px;
             cursor: pointer;
@@ -154,10 +163,12 @@
     <main>
         <button id="menu" class="fa fa-bars"></button>
         <div id="menu-container">
-            <button>HORARIO</button>
-            <button>EVENTOS</button>
-            <button>ASUNTOS</button>
-            <button>ENCARGADOS</button>
+            <div>
+                <button>HORARIO</button>
+                <button>EVENTOS</button>
+                <button>ASUNTOS</button>
+                <button>ENCARGADOS</button>
+            </div>
         </div>
         <div id="controls">
             <button id="prev" class="fa fa-angle-left"></button>
