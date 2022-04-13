@@ -15,7 +15,7 @@ $(document).ready(function () {
     var date = new Date();
     var day = date.getDay()
     
-    $('#days button')[day].trigger('click');
+    document.querySelector(`[data-value="${day}"]`).click();
 })
 $(document).on("click", function (e) {
     var container = $('#days');
