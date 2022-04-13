@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G_SCHEDULE | EVENTOS</title>
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <main>
+        <button id="menu" class="fa fa-bars"></button>
+        <div id="menu-container" style="display: none;">
+            <div>
+                <button id="btn_schedule">
+                    <i class="fa fa-calendar"></i>
+                    HORARIO
+                </button>
+                <button id="btn_events" class="selected">
+                    <i class="fa fa-calendar-day"></i>
+                    EVENTOS
+                </button>
+                <button id="btn_subjects">
+                    <i class="fa fa-compass"></i>
+                    ASUNTOS
+                </button>
+                <button id="btn_attendants">
+                    <i class="fa fa-users"></i>
+                    ENCARGADOS
+                </button>
+                <button id="btn_download">
+                    <i class="fa fa-download"></i>
+                    DESCARGAR
+                </button>
+                <button id="btn_backup">
+                    <i class="fa fa-upload"></i>
+                    REESTABLECER
+                </button>
+            </div>
+        </div>
+        <h2 id="title">REESTABLECER</h2>
+        <!-- <fieldset>
+            <legend>Restablecer horario general</legend>
+            <form>
+                
+            </form>
+        </fieldset> -->
+        <fieldset>
+            <legend>Restablecer desde un archivo</legend>
+            <form id="form-backup">
+                <input type="file" id="backup" accept="application/json">
+                <label for="backup">
+                    <span id="label-container">
+                        <i id="label-icon" class="fa fa-upload"></i>
+                        <text id="label-text">
+                            Seleccionar archivo
+                        </text>
+                    </span>
+                </label>
+                <div class="form-buttons">
+                    <button type="submit">Restablecer</button>
+                    <button type="reset">Cancelar</button>
+                </div>
+            </form>
+
+        </fieldset>
+
+    </main>
+    <script type="application/javascript" src="assets/js/fontawesome.min.js"></script>
+    <script type="application/javascript" src="assets/js/moment.min.js"></script>
+    <script type="application/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="application/javascript" src="assets/js/databasejs.min.js"></script>
+    <script type="application/javascript" src="assets/js/redirect.min.js"></script>
+    <script type="application/javascript" src="assets/js/backup/main.js"></script>
+</body>
+
+</html>
