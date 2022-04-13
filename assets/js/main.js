@@ -9,7 +9,8 @@ $(document).ready(function () {
     var date = new Date();
     var day = date.getDay()
     
-    document.querySelector(`[data-value="${day}"]`).click();
+    var btn = document.querySelector(`[data-value="${day}"]`);
+    daysButton(btn);
 })
 $(document).on("click", function (e) {
     var container = $('#days');
@@ -42,12 +43,15 @@ function showDay(id) {
     $('#schedule-container table').attr('id', id);
     drawTable(horario);
 }
-$(document).on('click', '#days button', function () {
-    var value = $(this).attr('data-value');
-    var label = $(this).text();
+function daysButton(btn) {
+    var value = $(btn).attr('data-value');
+    var label = $(btn).text();
     $('#days').fadeOut(125);
     $('#day').attr('data-value', value).text(label);
     showDay(value);
+}
+$(document).on('click', '#days button', function () {
+    daysButton(this);
 })
 $(document).on('click', '#prev', function () {
     var value = $('#day').attr('data-value');
