@@ -4,6 +4,12 @@ const days_label = ['DOMINGO', 'LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERN
 moment.locale('es');
 
 $(document).ready(function () {
+  $.getJSON('assets/json/localStorage.json', function (data){
+    localStorage.setItem('attendants', JSON.stringify(data.attendants));
+    localStorage.setItem('subjects', JSON.stringify(data.subjects));
+    localStorage.setItem('events', JSON.stringify(data.events));
+  });
+
     textToSpeech('');
     requestNewTab(); 
     var date = new Date();
