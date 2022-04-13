@@ -5,48 +5,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horario</title>
+    <title>G_SCHEDULE | INICIO</title>
     <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/jquery.modal.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link id="icon" rel="shortcut icon" href="assets/img/online.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style id="time-bar"></style>
 </head>
 
 <body>
     <main>
-        <span id="status" class="online"></span>
-        <select id="voces" style="display: none;"></select>
-        <input type="text" id="mensaje" style="display: none;">
-        <button id="btnEscuchar" style="display: none;"></button>
-        <div id="header">Día, 00 Mes 0000<br>00:00:00</div>
-        <button id="schedule" class="fa solid fa-calendar" title="Ver horario"></button>
-        <div id="body" class="true" style="display: none;">
+        <button id="menu" class="fa fa-bars"></button>
+        <div id="menu-container" style="display: none;">
             <div>
-                <span class="time start"></span>
-                <span class="time end"></span>
+                <button id="btn_schedule" class="selected">
+                    <i class="fa fa-calendar"></i>
+                    HORARIO
+                </button>
+                <button id="btn_events">
+                    <i class="fa fa-calendar-day"></i>
+                    EVENTOS
+                </button>
+                <button id="btn_subjects">
+                    <i class="fa fa-compass"></i>
+                    ASUNTOS
+                </button>
+                <button id="btn_attendants">
+                    <i class="fa fa-users"></i>
+                    ENCARGADOS
+                </button>
+                <button id="btn_download">
+                    <i class="fa fa-download"></i>
+                    DESCARGAR
+                </button>
+                <button id="btn_backup">
+                    <i class="fa fa-upload"></i>
+                    REESTABLECER
+                </button>
             </div>
-            <div class="course">Curso</div>
-            <div class="instructor">Profesor</div>
         </div>
-        <div id="body" class="false" style="display: none;"></div>
-        <div id="footer" style="display: none;">
-            <a class="link" href="" target="_blank">
-                <span class="mark">0%</span>
-                <img class="logo" src="assets/img/teams.svg" alt="">
-                Ir al Teams
-            </a>
+        <div id="controls">
+            <button id="prev" class="fa fa-angle-left"></button>
+            <span>
+                <button data-value="1" id="day">L</button>
+                <div id="days" style="display: none;">
+                    <button data-value="0">D</button>
+                    <button data-value="1">L</button>
+                    <button data-value="2">M</button>
+                    <button data-value="3">X</button>
+                    <button data-value="4">J</button>
+                    <button data-value="5">V</button>
+                    <button data-value="6">S</button>
+                </div>
+            </span>
+            <button id="next" class="fa fa-angle-right"></button>
+        </div>
+        <div id="schedule-container">
+            <table id="0" width="100%">
+                <thead>
+                    <tr>
+                        <td colspan="3" id="day_label"></td>
+                    </tr>
+                    <tr>
+                        <td>INI</td>
+                        <td>FIN</td>
+                        <td>EVENTO</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
     </main>
-    <div id="schedule-table">
-    </div>
-    <script src="assets/js/fontawesome.min.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.modal.min.js"></script>
-    <script src="assets/js/moment.min.js"></script>
-    <script src="assets/js/vars.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/schedule.js"></script>
-    <script src="assets/js/speech.js"></script>
+    <script type="application/javascript" src="assets/js/fontawesome.min.js"></script>
+    <script type="application/javascript" src="assets/js/moment.min.js"></script>
+    <script type="application/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="application/javascript" src="assets/js/textToSpeech.js"></script>
+    <script type="application/javascript" src="assets/js/verifyNewTab.js"></script>
+    <script type="application/javascript" src="assets/js/databasejs.min.js"></script>
+    <script type="application/javascript" src="assets/js/redirect.min.js"></script>
+    <script type="application/javascript" src="assets/js/schedule.js"></script>
+    <script type="application/javascript" src="assets/js/realtime.min.js"></script>
+    <script type="application/javascript" src="assets/js/main.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario</title>
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/jquery.modal.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link id="icon" rel="shortcut icon" href="assets/img/online.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <span id="status" class="online"></span>
+        <select id="voces" style="display: none;"></select>
+        <input type="text" id="mensaje" style="display: none;">
+        <button id="btnEscuchar" style="display: none;"></button>
+        <div id="header">Día, 00 Mes 0000<br>00:00:00</div>
+        <button id="schedule" class="fa solid fa-calendar" title="Ver horario"></button>
+        <div id="body" class="true" style="display: none;">
+            <div>
+                <span class="time start"></span>
+                <span class="time end"></span>
+            </div>
+            <div class="course">Curso</div>
+            <div class="instructor">Profesor</div>
+        </div>
+        <div id="body" class="false" style="display: none;"></div>
+        <div id="footer" style="display: none;">
+            <a class="link" href="" target="_blank">
+                <span class="mark">0%</span>
+                <img class="logo" src="assets/img/teams.svg" alt="">
+                Ir al Teams
+            </a>
+        </div>
+    </main>
+    <div id="schedule-table">
+    </div>
+    <script src="assets/js/fontawesome.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.modal.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/vars.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/schedule.js"></script>
+    <script src="assets/js/speech.js"></script>
+</body>
+
+</html>
