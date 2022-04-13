@@ -1,37 +1,68 @@
-$(document).on("click", "#schedule", function () {
-  var modal = $("#schedule-table");
-  modal.empty();
-  modal.modal("open");
-  for (let i = 0; i < 7; i++) {
-    var day = horario[`day${i}`];
-    if (day) {
-      var template = '';
-      template += `
-        <div>
-          <span class="day span day${i}">
-              ${days[i]}
-          </span>
-          <div class="day day${i}">
-      `;
-      day.forEach(d => {
-        template += `
-          <div class="day day${i}">${d.course}</div>
-        `;
-      });
-      template += `    
-          </div>
-        </div>
-      `;
-      modal.append(template)
+function drawTable(events) {
+    events = events.sort(function (x, y) {
+        if (x.time.start > y.time.start) return 1;
+        if (x.time.start < y.time.start) return -1;
+        return 0;
+    })
+    $('#schedule-container table tbody').html(null);
+    if (events.length > 0) {
+        var lastEnd = '00:00';
+        events.forEach((event, id) => {
+            if (lastEnd < event.time.start) {
+                $('#schedule-container table tbody').append(`
+                <tr class="none">
+                    <td>${lastEnd}</td>
+                    <td>${event.time.start}</td>
+                    <td>- No hay eventos registrados -</td>
+                </tr>
+                `);
+            }
+            var days_label = '';
+            event.days.forEach(day => {
+                days_label += `<span class="d_in_t">${days[day]}</span>`;
+            })
+            var links_btn = '';
+            event.subject.links.forEach(link => {
+                links_btn += `
+                <a href="${link.url}" target="_blank">
+                    ${link.name.toUpperCase()} ☍
+                </a>
+                `;
+            });
+            $('#schedule-container table tbody').append(`
+            <tr id="event-${id}">
+                <td>${event.time.start}</td>
+                <td>${event.time.end}</td>
+                <td>
+                    ${event.subject.name}
+                    <div class="extra_info">
+                        <p class="attendant">${event.attendant.name}</p>
+                        ${days_label}
+                        <div class="links">${links_btn}</div>
+                        <div class="time_bar">
+                            100%
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            `);
+            $(`#event-${id}`).attr('data-event', JSON.stringify(event));
+            lastEnd = event.time.end;
+        });
+        if (lastEnd != '00:00') {
+            $('#schedule-container table tbody').append(`
+            <tr class="none">
+                <td>${lastEnd}</td>
+                <td>24:00</td>
+                <td>- No hay eventos registrados -</td>
+            </tr>
+            `);
+        }
     } else {
-      modal.append(`
-        <div>
-          <span class="day span day${i}">
-              ${days[i]}
-          </span>
-          <div class="day day${i}">- No hay clases en este día -</div>
-        </div>
-      `);
+        $('#schedule-container table tbody').html(`
+        <tr class="none">
+            <td colspan="3">- No hay eventos registrados hoy -</td>
+        </tr>
+        `)
     }
-  }
-});
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G_SCHEDULE | EVENTOS</title>
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <main>
+        <button id="menu" class="fa fa-bars"></button>
+        <div id="menu-container" style="display: none;">
+            <div>
+                <button id="btn_schedule">
+                    <i class="fa fa-calendar"></i>
+                    HORARIO
+                </button>
+                <button id="btn_events" class="selected">
+                    <i class="fa fa-calendar-day"></i>
+                    EVENTOS
+                </button>
+                <button id="btn_subjects">
+                    <i class="fa fa-compass"></i>
+                    ASUNTOS
+                </button>
+                <button id="btn_attendants">
+                    <i class="fa fa-users"></i>
+                    ENCARGADOS
+                </button>
+                <button id="btn_download">
+                    <i class="fa fa-download"></i>
+                    DESCARGAR
+                </button>
+                <button id="btn_backup">
+                    <i class="fa fa-upload"></i>
+                    REESTABLECER
+                </button>
+            </div>
+        </div>
+        <h2 id="title">EVENTOS</h2>
+        <fieldset>
+            <legend>Agregar un evento</legend>
+            <form>
+                <div class="input-group">
+                    <label class="label-input" for="cbo_subjects">Escoja un asunto</label>
+                    <select id="cbo_subjects"></select>
+                </div>
+                <div class="input-group">
+                    <label class="label-input" for="cbo_attendants">Escoja un encargado</label>
+                    <select id="cbo_attendants"></select>
+                </div>
+                <div class="input-group">
+                    <label class="label-input" for="">Indique un horario</label>
+                    <div class="time-list">
+                        <input class="input-time" type="text" id="" size="5" placeholder="00:00">
+                        <span>-</span>
+                        <input class="input-time" type="text" id="" size="5" placeholder="00:00">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label class="label-input">Escoja los días</label>
+                    <div class="checkbox-list">
+                        <input type="checkbox" id="day_d">
+                        <label class="label-checkbox" for="day_d">D</label>
+                        <input type="checkbox" id="day_l">
+                        <label class="label-checkbox" for="day_l">L</label>
+                        <input type="checkbox" id="day_m">
+                        <label class="label-checkbox" for="day_m">M</label>
+                        <input type="checkbox" id="day_x">
+                        <label class="label-checkbox" for="day_x">X</label>
+                        <input type="checkbox" id="day_j">
+                        <label class="label-checkbox" for="day_j">J</label>
+                        <input type="checkbox" id="day_v">
+                        <label class="label-checkbox" for="day_v">V</label>
+                        <input type="checkbox" id="day_s">
+                        <label class="label-checkbox" for="day_s">S</label>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit">Agregar</button>
+                    <button type="reset">Cancelar</button>
+                </div>
+            </form>
+        </fieldset>
+        <table id="table-list">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ASUNTO</th>
+                    <th>ENCARGADO</th>
+                    <th>HORA</th>
+                    <th>DÍAS</th>
+                    <th>ACCIÓN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <script type="application/javascript" src="assets/js/fontawesome.min.js"></script>
+    <script type="application/javascript" src="assets/js/moment.min.js"></script>
+    <script type="application/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="application/javascript" src="assets/js/jquery.inputmask.min.js"></script>
+    <script type="application/javascript" src="assets/js/databasejs.min.js"></script>
+    <script type="application/javascript" src="assets/js/redirect.min.js"></script>
+    <script type="application/javascript" src="assets/js/events.js"></script>
+</body>
+
+</html>
