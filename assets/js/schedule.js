@@ -34,7 +34,7 @@ function drawTable(events) {
                 <td>${event.time.start}</td>
                 <td>${event.time.end}</td>
                 <td>
-                    ${event.subject.name}
+                    <span class="subject_name">${event.subject.name}</span>
                     <div class="extra_info">
                         <p class="attendant">${event.attendant.name}</p>
                         ${days_label}

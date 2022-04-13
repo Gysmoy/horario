@@ -27,8 +27,8 @@ $(document).on("click", function (e) {
 $(document).on('click', '#day', function () {
     $('#days').fadeToggle(125);
 })
-$(document).on('click', '#schedule-container tbody td:nth-child(3)', function () {
-    var div = $(this).find('.extra_info');
+$(document).on('click', '#schedule-container tbody .subject_name', function () {
+    var div = $(this).parent().find('.extra_info');
     $('.extra_info').each(function () {
         if ($(this).is(div)) {
             $(this).toggle(125);
