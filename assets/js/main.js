@@ -15,7 +15,10 @@ $(document).ready(function () {
     var date = new Date();
     var day = date.getDay()
     
-    $('#days button')[day].click();
+    setTimeout(function(){
+      $('#days button')[day].click();
+    },250) 
+     
 })
 $(document).on("click", function (e) {
     var container = $('#days');
