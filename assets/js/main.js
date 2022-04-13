@@ -15,10 +15,7 @@ $(document).ready(function () {
     var date = new Date();
     var day = date.getDay()
     
-    setTimeout(function(){
-      $('#days button')[day].click();
-    },250) 
-     
+    document.querySelector(`[data-value="${day}"]`).click();
 })
 $(document).on("click", function (e) {
     var container = $('#days');
