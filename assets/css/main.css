@@ -383,25 +383,27 @@ form .form-buttons button[type="reset"]:hover {
   transition: 0.25s;
   cursor: pointer;
 }
-#btn-edit {
+#btn-edit, .btn-info {
   background-color: rgba(0, 144, 231, 0.2) !important;
   color: #0090e7 !important;
-}#btn-edit:hover {
+}
+#btn-edit:hover, .btn-info:hover {
   background-color: #0090e7 !important;
   color: #fff !important;
 }
 #btn-delete {
   background-color: rgba(252, 66, 74, 0.2) !important;
   color: #fc424a !important;
-}#btn-delete:hover {
+}
+#btn-delete:hover {
   background-color: #fc424a !important;
   color: #fff !important;
 }
 /* SIN ICONOS */
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input[type=number] { -moz-appearance:textfield; }

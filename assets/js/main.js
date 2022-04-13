@@ -4,18 +4,13 @@ const days_label = ['DOMINGO', 'LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERN
 moment.locale('es');
 
 $(document).ready(function () {
-  $.getJSON('assets/json/localStorage.json', function (data){
-    localStorage.setItem('attendants', JSON.stringify(data.attendants));
-    localStorage.setItem('subjects', JSON.stringify(data.subjects));
-    localStorage.setItem('events', JSON.stringify(data.events));
-  });
-
     textToSpeech('');
     requestNewTab(); 
     var date = new Date();
     var day = date.getDay()
     
-    document.querySelector(`[data-value="${day}"]`).click();
+    var btn = document.querySelector(`[data-value="${day}"]`);
+    daysButton(btn);
 })
 $(document).on("click", function (e) {
     var container = $('#days');
@@ -32,8 +27,8 @@ $(document).on("click", function (e) {
 $(document).on('click', '#day', function () {
     $('#days').fadeToggle(125);
 })
-$(document).on('click', '#schedule-container tbody td:nth-child(3)', function () {
-    var div = $(this).find('.extra_info');
+$(document).on('click', '#schedule-container tbody .subject_name', function () {
+    var div = $(this).parent().find('.extra_info');
     $('.extra_info').each(function () {
         if ($(this).is(div)) {
             $(this).toggle(125);
@@ -48,12 +43,15 @@ function showDay(id) {
     $('#schedule-container table').attr('id', id);
     drawTable(horario);
 }
-$(document).on('click', '#days button', function () {
-    var value = $(this).attr('data-value');
-    var label = $(this).text();
+function daysButton(btn) {
+    var value = $(btn).attr('data-value');
+    var label = $(btn).text();
     $('#days').fadeOut(125);
     $('#day').attr('data-value', value).text(label);
     showDay(value);
+}
+$(document).on('click', '#days button', function () {
+    daysButton(this);
 })
 $(document).on('click', '#prev', function () {
     var value = $('#day').attr('data-value');
