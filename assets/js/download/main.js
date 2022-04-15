@@ -14,10 +14,16 @@ function saveFile(data, filename) {
 }
 
 $(document).on('click', '#download', function() {
+    var attendants = $('#check_attendants').is(':checked') ?
+        JSON.parse(localStorage.getItem('attendants')) : null;
+    var subjects = $('#check_subjects').is(':checked') ?
+        JSON.parse(localStorage.getItem('subjects')) : null;
+    var events = $('#check_events').is(':checked') ?
+        JSON.parse(localStorage.getItem('events')) : null;
     var data = {
-        attendants: JSON.parse(localStorage.getItem('attendants')),
-        subjects: JSON.parse(localStorage.getItem('subjects')),
-        events: JSON.parse(localStorage.getItem('events'))
+        attendants: attendants,
+        subjects: subjects,
+        events: events
     };
     saveFile(JSON.stringify(data), 'backup.json');
 })

@@ -50,6 +50,24 @@
         </fieldset> -->
         <fieldset>
             <legend>Realiza una copia de seguridad</legend>
+            <!--3 checkbox para marcar los elementos a guardar-->
+            <form id="form-download">
+                <input type="checkbox" id="check_events" checked>
+                <label for="check_events">
+                    <i class="fa fa-calendar-day"></i>
+                    Eventos
+                </label>
+                <input type="checkbox" id="check_subjects" checked>
+                <label for="check_subjects">
+                    <i class="fa fa-compass"></i>
+                    Asuntos
+                </label>
+                <input type="checkbox" id="check_attendants" checked>
+                <label for="check_attendants">
+                    <i class="fa fa-users"></i>
+                    Encargados
+                </label>
+            </form>
             <button id="download" class="btn-info">Generar copia de seguridad</button>
         </fieldset>
     </main>
