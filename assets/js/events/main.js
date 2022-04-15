@@ -2,11 +2,12 @@ const days = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
 function fn_subjects(cbo, value = null) {
     $(cbo).html(`<option value="" selected disabled>- Seleccione -</option>`);
     var subjects = JSON.parse(localStorage.subjects);
-    subjects.forEach((subject, id) => {
+    for (id in subjects) {
+        var subject = subjects[id];
         $(cbo).append(`
         <option value="${id}">${subject.name}</option>
         `);
-    });
+    };
 }
 function fn_attendants(cbo, value = null) {
     $(cbo).html(`<option value="" selected disabled>- Seleccione -</option>`);
@@ -28,18 +29,19 @@ $(document).ready(function () {
     var table = $('#table-list tbody');
     table.empty();
     var events = getEvents();
-    console.log(events)
-    events.forEach((event, id) => {
+    for (id in events) {
+        var event = events[id];
         if (event !== null) {
             var days_template = '';
             event.days.forEach(day => {
                 days_template += `<span class="d_in_t">${days[day]}</span>`;
             })
             table.append(`
-            <tr>
-                <td>${id}</td>
-                <td>${event.subject.name}</td>
-                <td>${event.attendant.name}</td>
+            <tr id="${id}">
+                <td>${event.subject.name}
+                    <br>-<br>
+                    ${event.attendant.name}
+                </td>
                 <td>${event.time.start}<br>-<br>${event.time.end}</td>
                 <td>${days_template}</td>
                 <td>
@@ -48,6 +50,7 @@ $(document).ready(function () {
                 </td>
             </tr>
             `);
+            $(`#${id}`).attr('data', JSON.stringify(event));
         }
-    })
+    }
 });
