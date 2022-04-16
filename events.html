@@ -88,6 +88,26 @@
         </fieldset>
         <fieldset>
             <legend>Lista de eventos</legend>
+            <div id="events">
+                <div class="event" id="{id}">
+                    <div class="event-header">{subject.name}</div>
+                    <div class="event-body">
+                        <div class="event-attendant"><b>Encargado: </b>{attendant.name}</div>
+                        <div class="event-time"><b>Horario: </b>{time.start} - {time.end}</div>
+                        <div class="event-days"><b>Días: </b>{days}</div>
+                    </div>
+                    <div class="event-footer">
+                        <button id="btn-edit" class="action-btn">
+                            <i class="fa fa-edit"></i>
+                            Modificar
+                        </button>
+                        <button id="btn-delete" class="action-btn">
+                            <i class="fa fa-trash"></i>
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
         </fieldset>
         <table id="table-list">
             <thead>

@@ -26,7 +26,7 @@ fn_attendants('#cbo_attendants');
 $('.input-time').inputmask({'mask': '99:99'});
 
 $(document).ready(function () {
-    var table = $('#table-list tbody');
+    var table = $('#events');
     var template = String(table.html());
     table.empty();
     var events = getEvents();
