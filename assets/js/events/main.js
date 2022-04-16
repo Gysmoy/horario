@@ -1,6 +1,6 @@
 const days = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
 function fn_subjects(cbo, value = null) {
-    $(cbo).html(`<option value="" selected disabled>- Seleccione -</option>`);
+    $(cbo).html(`<option value="" selected>- Seleccione -</option>`);
     var subjects = JSON.parse(localStorage.subjects);
     for (id in subjects) {
         var subject = subjects[id];
@@ -10,7 +10,7 @@ function fn_subjects(cbo, value = null) {
     };
 }
 function fn_attendants(cbo, value = null) {
-    $(cbo).html(`<option value="" selected disabled>- Seleccione -</option>`);
+    $(cbo).html(`<option value="" selected>- Seleccione -</option>`);
     var attendants = JSON.parse(localStorage.attendants);
     attendants.forEach((attendant, id) => {
         $(cbo).append(`
@@ -28,6 +28,7 @@ $('.input-time').inputmask({'mask': '99:99'});
 $(document).ready(function () {
     var table = $('#table-list tbody');
     table.empty();
+    var template = String(table.html());
     var events = getEvents();
     for (id in events) {
         var event = events[id];
