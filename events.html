@@ -86,6 +86,9 @@
                 </div>
             </form>
         </fieldset>
+        <fieldset>
+            <legend>Lista de eventos</legend>
+        </fieldset>
         <table id="table-list">
             <thead>
                 <tr>
@@ -96,15 +99,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr id="{event.id}">
+                <tr id="{id}">
                     <td>
-                        {event.subject.name}
-                        <br>-<br>>
-                        {event.attendant.name}
+                        {subject.name}
+                        <br>-<br>
+                        {attendant.name}
                     </td>
-                    <td>#</td>
-                    <td>#</td>
-                    <td>#</td>
+                    <td>
+                        {time.start}
+                        <br>-<br>
+                        {time.start}
+                    </td>
+                    <td>{days}</td>
+                    <td>
+                        <button id="btn-edit" class="action-btn fa fa-pencil"></button>
+                        <button id="btn-delete" class="action-btn fa fa-trash"></button>
+                    </td>
                 </tr>
             </tbody>
         </table>

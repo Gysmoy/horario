@@ -27,8 +27,8 @@ $('.input-time').inputmask({'mask': '99:99'});
 
 $(document).ready(function () {
     var table = $('#table-list tbody');
-    table.empty();
     var template = String(table.html());
+    table.empty();
     var events = getEvents();
     for (id in events) {
         var event = events[id];
@@ -37,20 +37,14 @@ $(document).ready(function () {
             event.days.forEach(day => {
                 days_template += `<span class="d_in_t">${days[day]}</span>`;
             })
-            table.append(`
-            <tr id="${id}">
-                <td>${event.subject.name}
-                    <br>-<br>
-                    ${event.attendant.name}
-                </td>
-                <td>${event.time.start}<br>-<br>${event.time.end}</td>
-                <td>${days_template}</td>
-                <td>
-                    <button id="btn-edit" class="action-btn fa fa-pencil"></button>
-                    <button id="btn-delete" class="action-btn fa fa-trash"></button>
-                </td>
-            </tr>
-            `);
+            table.append(template
+                .replaceAll('{id}', id)
+                .replaceAll('{subject.name}', event.subject.name)
+                .replaceAll('{attendant.name}', event.attendant.name)
+                .replaceAll('{days}', days_template)
+                .replaceAll('{time.start}', event.time.start)
+                .replaceAll('{time.end}', event.time.end)
+            );
             $(`#${id}`).attr('data', JSON.stringify(event));
         }
     }
