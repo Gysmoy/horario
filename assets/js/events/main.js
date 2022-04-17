@@ -24,6 +24,10 @@ fn_attendants('#cbo_attendants');
 
 // time-mask
 $('.input-time').inputmask({'mask': '99:99'});
+$(document).on('click', '.event-header', function() {
+    // mostrar y ocultar event-body y event-footer
+    $(this).parent().find('.event-body, .event-footer').toggle(125);
+});
 
 $(document).ready(function () {
     var table = $('#events');

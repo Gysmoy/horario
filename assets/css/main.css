@@ -405,7 +405,42 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
+/* Events */
+#events .event {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 5px 0px;
+  background-color: #383939;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+}
+#events .event:first-child {
+  margin-top: 0px;
+}
+#events .event:last-child {
+  margin-bottom: 0px;
+}
+#events .event .event-header {
+  width: 100%;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+#events .event .event-body {
+  display: none;
+  width: 100%;
+  padding: 5px 10px;
+  font-size: small;
+}
+#events .event .event-footer {
+  display: none;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: #38393975;
+}
 /* Download */
 #download {
   padding: 5px 10px;
