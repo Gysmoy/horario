@@ -1,16 +1,14 @@
-const days = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
 $(document).ready(function(){
     var data = getSubjects_();
     var table = $('#table-list-subjects tbody');
   
     table.empty();
-    console.log(data)
     data.forEach((subject, id) => {
         var links = '';
         if (subject !== null) {
 
             subject.links.forEach((a,b) =>{
-                console.log(a);
+                
                 links+=`<a href="${a.url}">${a.name}</a>`
             })
 
@@ -28,6 +26,29 @@ $(document).ready(function(){
             `);
         }
     })
-
-    console.log(JSON.parse(data));
 })
+
+function guardar_asunto(){
+    var sunject = $('#subject').val();
+    var subject_url = $('#subject-url').val();
+
+    if (sunject == ''){
+        console.log('Ingrese datos para guardar');
+    }else{
+        var links = '';
+        var dataSubject =  getSubjects_();
+
+
+        dataSubject.push({'name': sunject,'links':links})
+        console.log(dataSubject);
+    }
+}
+
+$('#save-subject').click(function (e) { 
+    e.preventDefault();
+    guardar_asunto();
+});
+
+function add_links(){
+    var template = $('.link').html();
+}

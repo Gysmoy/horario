@@ -45,18 +45,26 @@
         <fieldset>
             <legend>Agregar un asunto</legend>
             <form>
-                <div class="input-group">
+                <div class=" col-md-12">
                     <label  for="cbo_subjects">Ingrese un asunto</label>
                     <input id="subject"></input>
                 </div>
-                <div class="input-group">
-                    <label  for="cbo_subjects">Ingrese URL</label>
-                    <input id="subject-url"></input>
+                <label class="label-link">LINK <span class="add-sunject">+</span></label> <br>
+                <div class="link">
+                    <div>
+                        <div class="content-name-link">
+                            <label  for="cbo_subjects">Nombre de URL</label>
+                            <input id="subject-url"></input>
+                        </div>
+                        <div class="content-link">
+                            <label  for="cbo_subjects">Ingrese URL</label>
+                            <input id="subject-url"></input>
+                        </div>
+                    </div>
                 </div>
-                
               
-                <div class="form-buttons">
-                    <button type="submit">Agregar</button>
+                <div class="form-buttons botones-subject" >
+                    <button id="save-subject" type="button">Agregar</button>
                     <button type="reset">Cancelar</button>
                 </div>
             </form>

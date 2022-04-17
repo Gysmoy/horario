@@ -455,3 +455,48 @@ input[type=number] { -moz-appearance:textfield; }
   transition: 0.25s;
   cursor: pointer;
 }
+
+.col-md-12{
+  align-items: center;
+  text-align: center;
+  display:grid;
+  position: relative;
+  width: 100%;
+  margin-bottom: 12px;
+}
+.label-link{
+  color: #b0acb0;
+  display: block;
+  position: absolute;
+  margin-top: 45px;
+}
+
+.add-sunject{
+  color: #000;
+  border-radius: 10px;
+  background-color: #0090e7;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-weight: 300;
+  cursor: pointer;
+  font-size: 12px;
+}
+.content-name-link{
+  margin-top: 20px;
+  display: grid;
+  width: 200px;
+}
+
+.content-link{
+  margin-left: 230px;
+  display: grid;
+  width: 200px;
+  margin-top: -36px;
+}
+
+.botones-subject{
+
+  margin-top: 70px;
+}
