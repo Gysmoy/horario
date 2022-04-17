@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos de formulario</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+</head>
+<body>
+    <main>
+        <fieldset>
+            <legend>Elementos de formulario</legend>
+            <form autocomplete="off">
+                <div class="input-group input-half">
+                    <label for="type_text">Ingrese un texto</label>
+                    <input type="text" id="type_text" placeholder="abcd1234">
+                </div>
+                <div class="input-group input-half">
+                    <label for="type_number">Ingrese un número</label>
+                    <input type="number" id="type_number" placeholder="1234">
+                </div>
+                <div class="input-group">
+                    <label for="type_url">Ingrese una url</label>
+                    <input type="url" id="type_url" placeholder="http://">
+                </div>
+                <div class="input-group input-half">
+                    <label for="select">Selecciona un elemento</label>
+                    <select id="select">
+                        <option value selected>--</option>
+                        <option value="">Opción 1</option>
+                        <option value="">Opción 2</option>
+                        <option value="">Opción 3</option>
+                    </select>
+                </div>
+                <div class="input-group input-half">
+                    <label for="textarea">Ingrese un texto largo</label>
+                    <textarea id="textarea" rows="1" placeholder="abcd 1234 abcd 1234"></textarea>
+                </div>
+                <div class="input-group input-checkbox">
+                    <label for="#">Multiples checkbox</label>
+                    <input name="checkbox" type="checkbox" id="ck-d">
+                    <label for="ck-d">Domingo</label>
+                    <input name="checkbox" type="checkbox" id="ck-l">
+                    <label for="ck-l">Lunes</label>
+                    <input name="checkbox" type="checkbox" id="ck-m">
+                    <label for="ck-m">Martes</label>
+                    <input name="checkbox" type="checkbox" id="ck-x">
+                    <label for="ck-x">Miércoles</label>
+                    <input name="checkbox" type="checkbox" id="ck-j">
+                    <label for="ck-j">Jueves</label>
+                    <input name="checkbox" type="checkbox" id="ck-v">
+                    <label for="ck-v">Viernes</label>
+                    <input name="checkbox" type="checkbox" id="ck-s">
+                    <label for="ck-s">Sábado</label>
+                </div>
+                <div class="input-group input-radio">
+                    <label for="#">Multiples Radios</label>
+                    <input name="radio" type="radio" id="rd-d">
+                    <label for="rd-d">Domingo</label>
+                    <input name="radio" type="radio" id="rd-l">
+                    <label for="rd-l">Lunes</label>
+                    <input name="radio" type="radio" id="rd-m">
+                    <label for="rd-m">Martes</label>
+                    <input name="radio" type="radio" id="rd-x">
+                    <label for="rd-x">Miércoles</label>
+                    <input name="radio" type="radio" id="rd-j">
+                    <label for="rd-j">Jueves</label>
+                    <input name="radio" type="radio" id="rd-v">
+                    <label for="rd-v">Viernes</label>
+                    <input name="radio" type="radio" id="rd-s">
+                    <label for="rd-s">Sábado</label>
+                </div>
+            </form>
+        </fieldset>
+    </main>
+</body>
+</html>

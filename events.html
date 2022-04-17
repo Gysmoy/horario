@@ -44,25 +44,30 @@
         <h2 id="title">EVENTOS</h2>
         <fieldset>
             <legend>Agregar un evento</legend>
-            <form>
+            <form autocomplete="off">
                 <div class="input-group">
-                    <label class="label-input" for="cbo_subjects">Escoja un asunto</label>
+                    <label for="name">Nombre del evento</label>
+                    <input type="text" id="name" placeholder="Asigne un nombre al evento">
+                </div>
+
+                <div class="input-group half">
+                    <label for="cbo_subjects">Escoja un asunto</label>
                     <select id="cbo_subjects"></select>
                 </div>
-                <div class="input-group">
-                    <label class="label-input" for="cbo_attendants">Escoja un encargado</label>
+                <div class="input-group half">
+                    <label for="cbo_attendants">Escoja un encargado</label>
                     <select id="cbo_attendants"></select>
                 </div>
-                <div class="input-group">
-                    <label class="label-input" for="">Indique un horario</label>
+                <div class="input-group half">
+                    <label for="">Indique un horario</label>
                     <div class="time-list">
                         <input class="input-time" type="text" id="" size="5" placeholder="00:00">
                         <span>-</span>
                         <input class="input-time" type="text" id="" size="5" placeholder="00:00">
                     </div>
                 </div>
-                <div class="input-group">
-                    <label class="label-input">Escoja los días</label>
+                <div class="input-group half">
+                    <label>Escoja los días</label>
                     <div class="checkbox-list">
                         <input type="checkbox" id="day_d">
                         <label class="label-checkbox" for="day_d">D</label>
@@ -90,8 +95,9 @@
             <legend>Lista de eventos</legend>
             <div id="events">
                 <div class="event" id="{id}">
-                    <div class="event-header">{subject.name}</div>
+                    <div class="event-header">{name}</div>
                     <div class="event-body">
+                        <div class="event-days"><b>Asunto: </b>{subject.name}</div>
                         <div class="event-attendant"><b>Encargado: </b>{attendant.name}</div>
                         <div class="event-time"><b>Horario: </b>{time.start} - {time.end}</div>
                         <div class="event-days"><b>Días: </b>{days}</div>
