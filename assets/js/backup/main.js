@@ -1,4 +1,4 @@
-// Script para leer el contenido del archivo subido
+// Función para leer un archivo de un input file
 function readFile(file, callback) {
     var reader = new FileReader();
     reader.onload = function (e) {
@@ -7,7 +7,7 @@ function readFile(file, callback) {
     reader.readAsText(file);
 }
 
-// cambiar nombre del label del input file cuando se seleccione un archivo
+// Evento change para cambiar el label del input file
 $('#backup').on('change', function () {
     var file = $('#backup').prop('files')[0];
     if (file) {
@@ -19,15 +19,22 @@ $('#backup').on('change', function () {
     }
 });
 
+// Evento submit para leer el archivo y cargar los datos
 $('#form-backup').submit(e => {
     e.preventDefault()
     var file = $('#backup').prop('files')[0];
     if (file) {
         readFile(file, function (data) {
             var json = JSON.parse(data);
-            localStorage.setItem('attendants', JSON.stringify(json.attendants));
-            localStorage.setItem('subjects', JSON.stringify(json.subjects));
-            localStorage.setItem('events', JSON.stringify(json.events));
+            if (json.attendants) {
+                localStorage.setItem('attendants', JSON.stringify(json.attendants));
+            }
+            if (json.subjects) {
+                localStorage.setItem('subjects', JSON.stringify(json.subjects));
+            }
+            if (json.events) {
+                localStorage.setItem('events', JSON.stringify(json.events));
+            }
             alert('Datos restaurados con éxito');
             location.href = './';
         });
@@ -35,6 +42,6 @@ $('#form-backup').submit(e => {
         alert('No se ha seleccionado ningun archivo')
     }
 })
-$('#form-backup').on('reset', function() {
+$('#form-backup').on('reset', function () {
     $('#backup').val(null).trigger('change');
 })

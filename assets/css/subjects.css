@@ -1,0 +1,90 @@
+.content {
+    width: 100%;
+    padding: 12px;
+  }
+  
+  
+  .content label{
+    display: block;
+  }
+  .content input{
+    margin-top: 8px;
+    display: block;
+  }
+  
+  #table-list-subjects {
+    width: calc(100% - 10px);
+    margin: auto;
+    margin-top: 10px;
+    border-collapse: separate;
+    border-spacing: 2px;
+  }
+  #table-list-subjects th,
+  #table-list-subjects td {
+    padding: 5px 7.5px;
+    color: #fff;
+    text-align: center;
+    font-size: smaller;
+  }
+  #table-list-subjects th {
+    font-weight: bolder;
+  }
+  #table-list-subjects td {
+    background-color: #2c2d2d;
+    border-radius: 5px;
+  }
+  #table-list-subjects .action-btn {
+    font-size: smaller;
+    color: #fff;
+    background-color: transparent;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+  
+  .col-md-12{
+    align-items: center;
+    text-align: center;
+    display:grid;
+    position: relative;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .label-link{
+    color: #b0acb0;
+    display: block;
+    position: absolute;
+    margin-top: 45px;
+  }
+  
+  .add-sunject{
+    color: #000;
+    border-radius: 10px;
+    background-color: #0090e7;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-weight: 300;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  .content-name-link{
+    margin-top: 20px;
+    display: grid;
+    width: 200px;
+  }
+  
+  .content-link{
+    margin-left: 230px;
+    display: grid;
+    width: 200px;
+    margin-top: -36px;
+  }
+  
+  .botones-subject{
+  
+    margin-top: 70px;
+  }

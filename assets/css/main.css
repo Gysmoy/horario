@@ -405,12 +405,53 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
-input[type=number] { -moz-appearance:textfield; }
-
-/*subjects*/
-
-.content {
+/* Events */
+#events .event {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 5px 0px;
+  background-color: #383939;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+}
+#events .event:first-child {
+  margin-top: 0px;
+}
+#events .event:last-child {
+  margin-bottom: 0px;
+}
+#events .event .event-header {
+  width: 100%;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+#events .event .event-body {
+  display: none;
+  width: 100%;
+  padding: 5px 10px;
+  font-size: small;
+}
+#events .event .event-footer {
+  display: none;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: #38393975;
+}
+.btn {
+  border-radius: 5px;
+  border: 1px solid transparent;
+  padding: 3px 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+/* Download */
+#download {
+  padding: 5px 10px;
   width: 100%;
   padding: 12px;
 }
@@ -427,14 +468,52 @@ input[type=number] { -moz-appearance:textfield; }
 #table-list-subjects {
   width: calc(100% - 10px);
   margin: auto;
-  margin-top: 10px;
-  border-collapse: separate;
-  border-spacing: 2px;
+  margin-top: 15px;
+  width: 100%;
+  border: 2px solid transparent;
 }
-#table-list-subjects th,
-#table-list-subjects td {
-  padding: 5px 7.5px;
+
+/* Form download */
+#form-download {
+  justify-content: center;
+}
+#form-download input[type="checkbox"] {
+  display: none;
+}
+
+#form-download input[type="checkbox"] + label {
+  display: block;
+  padding: 5px 10px;
+  margin: 2.5px;
+  background-color: #383939;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #383939;
+  transition: 0.25s;
+  font-weight: bolder;
+}
+#form-download input[type="checkbox"]:checked + label {
+  background-color: #ffab00;
   color: #fff;
+}
+#form-download input[type="checkbox"] + label:hover {
+  background-color: rgba(255, 171, 0, 0.2);
+  color: #ffab00;
+}
+
+/* Backup */
+input#backup {
+  display: none;
+}
+label[for="backup"] {
+  position: relative;
+  display: block;
+  border: dashed 2px rgba(255, 255, 255, 0.125);
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  height: 100px;
   text-align: center;
   font-size: smaller;
 }
