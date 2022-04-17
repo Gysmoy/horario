@@ -93,4 +93,5 @@ form .input-group select {
 form .input-group select {
   display: block;
   height: 52px;
+  cursor: pointer;
 }
