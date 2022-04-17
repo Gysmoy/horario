@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G_SCHEDULE | EVENTOS</title>
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/subjects.css">
+</head>
+
+<body>
+    <main>
+        <button id="menu" class="fa fa-bars"></button>
+        <div id="menu-container" style="display: none;">
+            <div>
+                <button id="btn_schedule">
+                    <i class="fa fa-calendar"></i>
+                    HORARIO
+                </button>
+                <button id="btn_events" >
+                    <i class="fa fa-calendar-day"></i>
+                    EVENTOS
+                </button>
+                <button id="btn_subjects" class="selected">
+                    <i class="fa fa-compass"></i>
+                    ASUNTOS
+                </button>
+                <button id="btn_attendants">
+                    <i class="fa fa-users"></i>
+                    ENCARGADOS
+                </button>
+                <button id="btn_download">
+                    <i class="fa fa-download"></i>
+                    DESCARGAR
+                </button>
+                <button id="btn_backup">
+                    <i class="fa fa-upload"></i>
+                    REESTABLECER
+                </button>
+            </div>
+        </div>
+        <h2 id="title">ASUNTOS</h2>
+        <fieldset>
+            <legend>Agregar un asunto</legend>
+            <form>
+                <div class=" col-md-12">
+                    <label  for="cbo_subjects">Ingrese un asunto</label>
+                    <input id="subject"></input>
+                </div>
+                <label class="label-link">LINK <span class="add-sunject">+</span></label> <br>
+                <div class="link">
+                    <div>
+                        <div class="content-name-link">
+                            <label  for="cbo_subjects">Nombre de URL</label>
+                            <input id="subject-url"></input>
+                        </div>
+                        <div class="content-link">
+                            <label  for="cbo_subjects">Ingrese URL</label>
+                            <input id="subject-url"></input>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="form-buttons botones-subject" >
+                    <button id="save-subject" type="button">Agregar</button>
+                    <button type="reset">Cancelar</button>
+                </div>
+            </form>
+        </fieldset>
+        <table id="table-list-subjects">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ASUNTO</th>
+                    <th>LINK</th>
+                    <th>ACCIÓN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <script type="application/javascript" src="assets/js/fontawesome.min.js"></script>
+    <script type="application/javascript" src="assets/js/moment.min.js"></script>
+    <script type="application/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="application/javascript" src="assets/js/jquery.inputmask.min.js"></script>
+    <script type="application/javascript" src="assets/js/databasejs.min.js"></script>
+    <script type="application/javascript" src="assets/js/redirect.min.js"></script>
+    <script type="application/javascript" src="assets/js/subjects.js"></script>
+</body>
+
+</html>
