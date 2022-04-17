@@ -97,11 +97,11 @@
                         <div class="event-days"><b>Días: </b>{days}</div>
                     </div>
                     <div class="event-footer">
-                        <button id="btn-edit" class="action-btn">
+                        <button id="btn-edit" class="btn">
                             <i class="fa fa-pencil"></i>
                             Modificar
                         </button>
-                        <button id="btn-delete" class="action-btn">
+                        <button id="btn-delete" class="btn">
                             <i class="fa fa-trash"></i>
                             Eliminar
                         </button>
@@ -109,40 +109,12 @@
                 </div>
             </div>
         </fieldset>
-        <table id="table-list">
-            <thead>
-                <tr>
-                    <th>ASUNTO - ENCARGADO</th>
-                    <th>HORA</th>
-                    <th>DÍAS</th>
-                    <th>ACCIÓN</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr id="{id}">
-                    <td>
-                        {subject.name}
-                        <br>-<br>
-                        {attendant.name}
-                    </td>
-                    <td>
-                        {time.start}
-                        <br>-<br>
-                        {time.start}
-                    </td>
-                    <td>{days}</td>
-                    <td>
-                        <button id="btn-edit" class="action-btn fa fa-pencil"></button>
-                        <button id="btn-delete" class="action-btn fa fa-trash"></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
     </main>
     <script type="application/javascript" src="assets/js/fontawesome.min.js"></script>
     <script type="application/javascript" src="assets/js/moment.min.js"></script>
     <script type="application/javascript" src="assets/js/jquery.min.js"></script>
     <script type="application/javascript" src="assets/js/jquery.inputmask.min.js"></script>
+    <script type="application/javascript" src="assets/js/general/consts.js"></script>
     <script type="application/javascript" src="assets/js/general/guid.min.js"></script>
     <script type="application/javascript" src="assets/js/databasejs.min.js"></script>
     <script type="application/javascript" src="assets/js/redirect.min.js"></script>

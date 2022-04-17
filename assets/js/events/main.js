@@ -1,4 +1,3 @@
-const days = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
 function fn_subjects(cbo, value = null) {
     $(cbo).html(`<option value="" selected>- Seleccione -</option>`);
     var subjects = JSON.parse(localStorage.subjects);
@@ -37,15 +36,15 @@ $(document).ready(function () {
     for (id in events) {
         var event = events[id];
         if (event !== null) {
-            var days_template = '';
-            event.days.forEach(day => {
-                days_template += `<span class="d_in_t">${days[day]}</span>`;
-            })
+            for (pos in event.days) {
+                // convertir el array de dias en un string
+                event.days[pos] = days_label[event.days[pos]];
+            }
             table.append(template
                 .replaceAll('{id}', id)
                 .replaceAll('{subject.name}', event.subject.name)
                 .replaceAll('{attendant.name}', event.attendant.name)
-                .replaceAll('{days}', days_template)
+                .replaceAll('{days}', event.days.join(', '))
                 .replaceAll('{time.start}', event.time.start)
                 .replaceAll('{time.end}', event.time.end)
             );
