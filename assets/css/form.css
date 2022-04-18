@@ -75,6 +75,8 @@ form .input-group label {
 form .input-group input[type="text"],
 form .input-group input[type="number"],
 form .input-group input[type="url"],
+form .input-group input[type="email"],
+form .input-group input[type="password"],
 form .input-group textarea,
 form .input-group select {
   margin: 0;
